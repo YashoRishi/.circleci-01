@@ -1,0 +1,14 @@
+workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - build
+      - smoke-go:
+requires:
+            - build
+      - smoke-java:
+          requires:
+            - smoke-go
+      - deploy:
+          requires:
+            - smoke-java
