@@ -1,0 +1,7 @@
+workflows:
+  version: 2
+  test-suite:
+    jobs:
+      - unit-tests
+      - integration-tests
+      - acceptance-tests
